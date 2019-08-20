@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<title>TuLoPagas</title>
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="assets\css\views\home\home.css" type="text/css">
+
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<!-- International Telephone Input -->
+	<link rel="stylesheet" href="assets\css\views\home\intlTelInput.css">
+</head>
+
+<body>
+
+	<!-- Modal Register -->
+	<div id="registerModal" class="windowModal closedModal fade">
+		<a class="btnCloseModal" href="#">
+			<img src="assets/img/views/register/boton-de-cerrar.png" class="btnAnimation img-fluid">
+		</a>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-10 col-sm-6 col-md-5 col-lg-5 col-xl-5 text-center mx-auto py-3 my-3 px-0">
+					<div class="col-10 col-md-12 mx-auto">
+						<img id="registerIcon" src="assets/img/views/register/icono-registro.png" class="img-fluid">
+					</div>
+					<h1 id="registerTitle" class="text-white">Title</h1>
+					<h2 id="registerMsg" class="mb-5 text-white">Message</h2>
+					<form class="mt-1 mt-lg-5">
+						<div class="form-group formPhone">
+							<input id="registerInput1" type="text" name="" placeholder="Número de teléfono" value=""></input>
+						</div>
+						<div class="form-group my-1">
+							<input id="registerInput2" type="password" name="" placeholder="Código" value=""></input>
+						</div>
+						<div id="registerDivCheck" class="form-group pb-1 mb-1">
+							<input id="registerCheckbox" type="checkbox" class="pb-0 mb-0 d-none" />
+							<label for="registerCheckbox">
+								<a class="colorBlue pb-0 mb-0" href="#">Términos y condiciones</a>
+							</label>
+						</div>
+						<label id="registerCheckError" class="text-white mt-0 pt-0">Debe aceptar los Términos y condiciones para continuar</label>
+						<a id="registerLinkNumber" class="colorBlue pt-0 mt-0 " href="#">¿No tienes número de teléfono?</a>
+						<div class="form-group mb-0 mb-lg-2">
+							<a href="#">
+								<img id="registerBtn" data-register="" src="assets/img/views/register/boton-registro-pantalla-2.png" class="btnAnimation">
+							</a>
+						</div>
+					</form>
+					<div id="registerDivLogin" class="mt-0 mt-lg-3 text-center">
+						<label class="text-white mr-1">¿Ya tienes cuenta? </label>
+						<a id="registerLinkLogin" class="colorBlue" href="#">Inicia Sesión</a>
+					</div>
+					<div id="registerDivResend" class="mb-1">
+						<label class="text-white">¿No recibiste el código? </label>
+						<a id="registerLinkResend" data-linkquestion="" class="colorBlue" href="#">Reenviar</a>
+					</div>
+					<div class="">
+						<a id="registerLinkBack" data-back="" class="colorBlue " href="#">Regresar</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal Login -->
+	<div id="loginModal" class="windowModal closedModal fade">
+		<a class="btnCloseModal" href="#">
+			<img src="assets/img/views/login/boton-de-cerrar.png" class="btnAnimation img-fluid">
+		</a>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-10 col-sm-6 col-md-5 col-lg-5 col-xl-5 text-center mx-auto py-3 my-3 px-0">
+					<div class="col-10 col-md-12 mx-auto">
+						<img id="loginIcon" src="assets/img/views/login/icono-inicio-de-sesión.png" class="img-fluid">
+					</div>
+					<form class="mt-1 mt-lg-5">
+						<div class="form-group formPhone my-1">
+							<input id="loginInput1" type="tel" name="" placeholder="Número de teléfono" value=""></input>
+						</div>
+						<div class="form-group">
+							<input id="loginInput2" type="password" name="" placeholder="Código" value=""></input>
+						</div>
+						<div id="loginLinkRecovery" class="form-group py-0 my-0">
+							<a class="colorBlue" href="#">¿Olvidaste tu contraseña?</a>
+						</div>
+						<div id="loginLinkNumber" class="form-group py-0 my-0">
+							<a class="colorBlue" href="#">¿No tienes número de teléfono?</a>
+						</div>
+						<div class="form-group mb-0 mb-lg-2">
+							<a href="#">
+								<img id="loginBtn" data-login="" src="assets/img/views/login/boton-inicio-de-sesion-datos-invalidos.png" class="btnAnimation">
+							</a>
+						</div>
+					</form>
+					<div class="mt-0 mt-lg-3">
+						<label class="text-white mr-1">¿Aún no tienes cuenta? </label>
+						<a id="loginLinkRegister" data-linkquestion="" class="colorBlue" href="#">Regístrate</a>
+					</div>
+					<div class="">
+						<a id="loginLinkBack" data-back="" class="colorBlue " href="#">Regresar</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal Recovery -->
+	<div id="recoveryModal" class="windowModal closedModal fade">
+		<a class="btnCloseModal" href="#">
+			<img src="assets/img/views/login/boton-de-cerrar.png" class="btnAnimation">
+		</a>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-10 col-sm-6 col-md-5 col-lg-5 col-xl-5 text-center mx-auto py-3 my-3 px-0">
+					<img id="recoveryIcon" src="assets/img/views/login/icono-recuperar-contraseña.png" class="img-fluid">
+					<h1 id="recoveryTitle" class="text-white">Title</h1>
+					<h2 id="recoveryMsg" class="mb-4 text-white">Message</h2>
+					<div id="recoveryDivQuestion" class="invisible">
+						<label id="recoveryQuestion" class="text-white text-center">Question segurity</label>
+					</div>
+					<form class="mt-4">
+						<div class="form-group">
+							<input id="recoveryInput1" type="text" name="" placeholder="Número de teléfono" value=""></input>
+						</div>
+						<div class="form-group mb-0">
+							<input id="recoveryInput2" type="password" name="" placeholder="Código" value=""></input>
+						</div>
+						<div id="recoveryDivError" class="invisible my-0 pt-0">
+							<label id="recoveryErrorTitle" class="my-0 pt-0">Error</label>
+							<label id="recoveryErrorMsg" class="text-white my-0 pt-0">Error mesage</label>
+						</div>
+						<div class="form-group mt-3">
+							<a href="#">
+								<img id="recoveryBtn" data-recovery="" src="assets/img/views/login/boton-recuperar-contraseña-siguiente.png" class="btnAnimation">
+							</a>
+						</div>
+					</form>
+					<div id="recoveryDivResend" class="mb-1">
+						<label class="text-white">¿No recibiste el código? </label>
+						<a id="recoveryLinkResend" data-linkquestion="" class="colorBlue" href="#">Reenviar</a>
+					</div>
+					<div class="">
+						<a id="recoveryLinkBack" class="colorBlue " href="#">Regresar</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Home -->
+	<div id="home">
+		<div class="container-fluid">
+			<div class="row pb-4 pb-lg-4">
+				<div class="offset-lg-1 col-12 col-md-6 col-lg-5 col-xl-5 pr-md-0 px-lg-0 text-center order-1">
+					<img id="logoWhite" src="assets/img/views/home/identidad-tu-lo-pagas-pantalla-1.png" class="img-fluid mt-5 mt-md-4 mt-lg-5">
+					<div class="text-center d-none d-md-block">
+						<svg id="svgLine" class="position-absolute" width="100%" height="20" xml:space="preserve">
+							<line id="line" x1="0" y1="10" x2="100%" y2="10" stroke="#fff" stroke-linecap="round" stroke-width="0.3rem" shape-rendering="crispEdges" ></line>
+						</svg>
+					</div>
+					<div class="text-right pt-5 pt-md-4 pt-lg-5">
+						<h2 class="colorViolet">Tu dinero cuando quieras,</h2>
+						<h1 class="colorViolet">como quieras.</h1>
+					</div>
+					<div class="">
+						<a href="#" class="">
+							<img id="btnLogin" src="assets/img/views/home/icono-inicio-de-sesion-pantalla-1.png" class="btnAnimation img-fluid">
+						</a>
+						<a href="#" class="">
+							<img id="btnRegister" src="assets/img/views/home/icono-registro-pantalla-1.png" class="btnAnimation img-fluid">
+						</a>
+					</div>
+				</div>
+				<div class="offset-lg-1 col-12 col-md-5 col-lg-4 col-xl-4 px-0 order-3">
+					<div class="col-10 d-md-none px-0 position-relative">
+						<hr id="lineMovil" class="px-0 mx-0 py-0 my-0">
+					</div>
+					<img id="cellphone" src="assets/img/views/home/celular-pantalla-1.png" class="img-fluid mt-md-4 mt-lg-5 mt-xl-4 text-right position-absolute">
+					<img id="logoGreen" src="assets/img/views/home/isotipo-tu-lo-pagas-pantalla-1.png" class="img-fluid mb-3 mb-md-5">
+					<div class="text-center px-5 ml-md-4 ml-lg-0 px-md-0 pt-lg-4">
+						<a href="https://www.apple.com/la/ios/app-store/" class="">
+							<img id="btnAppIos" src="assets/img/views/home/icono-app-ios.png" class="btnAnimation img-fluid py-3 py-md-0 mr-md-2">
+						</a>
+						<a href="https://play.google.com/store?hl=es" class="">
+							<img id="btnAppAndroid" src="assets/img/views/home/icono-app-android.png" class="btnAnimation img-fluid">
+						</a>
+					</div>
+				</div>
+				<div id="socialNetwork" class="offset-11 col-1 h-100 d-md-flex align-items-center px-0 position-fixed order-2">
+					<div class="ml-auto">
+						<div class="text-center my-5 my-md-0 mb-md-5 pb-md-5">
+							<nav class="nav flex-column">
+								<a class="nav-link" href="https://www.instagram.com/">
+									<img src="assets/img/views/home/icono-instagram.png" class="btnAnimation">
+								</a>
+								<a class="nav-link" href="https://twitter.com/">
+									<img src="assets/img/views/home/icono-twitter.png" class="btnAnimation">
+								</a>
+								<a class="nav-link" href="https://www.facebook.com/">
+									<img src="assets/img/views/home/icono-facebook.png" class="btnAnimation">
+								</a>
+								<a class="nav-link" href="https://www.youtube.com/">
+									<img src="assets/img/views/home/icono-youtube.png" class="btnAnimation">
+								</a>
+							</nav>
+						</div>
+						<div id="divBtnHelp" class="text-right mt-xl-5 pt-xl-5 d-none d-md-block">
+							<a href="#">
+								<img id="btnHelp" src="assets/img/views/home/icono-ayuda.png" class="btnAnimation">
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Button Down -->
+	<div class="col-12 text-center d-none d-md-block">
+		<a href="#">
+			<img id="btnDown" data-value="" src="assets/img/views/home/scroll.png" class="img-fluid">
+		</a>
+	</div>
+
+	<!-- Information -->
+	<div id="information">
+		<div class="container-fluid py-4 py-md-4 my-md-4">
+			<div class="row">
+				<div class="offset-lg-1 col-12 col-md-5 col-lg-5 col-xl-5 pr-md-0 d-flex align-items-center">
+					<div class="ml-auto">
+						<img id="logoColor" src="assets/img/views/home/identidad-a-color-tu-lo-pagas-pantalla-2.png" class="img-fluid mr-md-5 py-md-0 pr-md-5">
+						<div class="text-right pb-2 pb-md-5 mb-2 mb-md-5 d-none d-md-block">
+							<svg width="50%" height="20" xml:space="preserve">
+								<line id="line2" x1="0" y1="10" x2="100%" y2="10" stroke="#49002C" stroke-linecap="round" stroke-width="0.3rem" shape-rendering="crispEdges"></line>
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-md-6 col-lg-5 col-xl-5 pr-md-2 px-md-0 d-flex align-items-center">
+					<div class="mr-auto">
+						<div class="my-4 my-md-0 d-flex justify-content-center">
+							<h1 class="colorBlue">Tú pago</h1>
+							<h2 class="colorGray pl-1 pl-md-2 pl-lg-3">rápido y seguro</h2>
+						</div>
+						<ul id="navTabs" class="nav nav-pills justify-content-center mt-2 mt-md-3 mt-lg-5" role="tablist">
+							<li class="nav-item mr-2 mr-lg-4"> 
+								<a id="linkA" class="nav-link active" href="#tabA" data-toggle="pill" role="tab" aria-controls="tabA" aria-selected="true">
+									<svg class="svgCircle">
+										<circle cx="50%" cy="50%" r="45%"></circle>
+										<text x="35%" y="70%">A</text>
+									</svg>
+								</a>
+							</li>
+							<li class="nav-item mx-2 mx-lg-4">
+								<a id="linkB" class="nav-link" href="#tabB" data-toggle="pill" role="tab" aria-controls="tabB" aria-selected="false">
+									<svg class="svgCircle">
+										<circle cx="50%" cy="50%" r="45%"></circle> 
+										<text x="35%" y="70%">B</text>
+									</svg>
+								</a>
+							</li>
+							<li class="nav-item ml-2 ml-lg-4">
+								<a id="linkC" class="nav-link" href="#tabC" data-toggle="pill" role="tab" aria-controls="tabC" aria-selected="false">
+									<svg class="svgCircle">
+										<circle cx="50%" cy="50%" r="45%"></circle> 
+										<text x="35%" y="70%">C</text>
+									</svg>
+								</a>
+							</li>
+						</ul>
+						<svg class="pr-4 pr-md-2 position-absolute" width="100%" height="60%" class="">
+							<rect id="rectTab" x="3" y="3" rx="25" ry="25" width="98%" height="98%"/>
+							</rect>
+						<svg> 
+						<div id="contentTab" class="tab-content px-1 px-md-5 py-4 py-md-3 py-lg-5">
+							<div id="tabA" class="tab-pane fade show active" role="tabpanel" aria-labelledby="tabLinkA">
+								<div>
+									<div class="text-left">
+										<h3>Paga</h3>
+									</div>
+									<div class="text-justify">
+										<p>
+											Tú Lo Pagas es un servicio que te permite realizar pagos en cualquier establecimineto afiliado, las 24 horas del día, los
+											365 días del año.
+										</p>
+									</div>
+								</div>
+							</div>
+							<div id="tabB" class="tab-pane fade" role="tabpanel" aria-labelledby="tabLinkB">
+								<div>
+									<div class="text-left">
+										<h3>Tab B</h3>
+									</div>
+									<div class="text-justify">
+										<p>
+											Tú Lo Pagas es un servicio que te permite realizar pagos en cualquier establecimineto afiliado, las 24 horas del día, los
+											365 días del año.
+										</p>
+									</div>
+								</div>
+							</div>
+							<div id="tabC" class="tab-pane fade" role="tabpanel" aria-labelledby="tabLinkC">
+								<div>
+									<div class="text-left">
+										<h3>Tab C</h3>
+									</div>
+									<div class="text-justify">
+										<p>
+											Tú Lo Pagas es un servicio que te permite realizar pagos en cualquier establecimineto afiliado, las 24 horas del día, los
+											365 días del año.
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Script -->
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+	<script src="assets/js/views/home/home.js"></script>
+	<script src="assets/js/views/home/intlTelInput.js"></script>
+
+</body>
+
+</html>

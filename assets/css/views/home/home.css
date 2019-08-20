@@ -1,0 +1,522 @@
+/*=============== Web ===============*/
+
+/*----------- Labels -----------*/
+
+@font-face {
+	font-family: avenir;
+	src: url('./fonts/AVENIRNEXTLTPRO-DEMI.OTF');
+}
+
+@font-face {
+	font-family: officinaStdBold;
+	src: url('./fonts/OfficinaSansStd-Bold.otf');
+}
+
+@font-face {
+	font-family: officinaStdBook;
+	src: url('./fonts/OfficinaSansStd-Book.otf');
+}
+
+@keyframes drawLine {
+	to {
+		stroke-dashoffset: 0;
+	}
+}
+
+@keyframes circleAnimation {
+	from {
+		stroke-dasharray: 250;
+	}
+	to {
+		stroke-dasharray: 92;
+	}
+}
+
+@keyframes rectBorder {
+	from {
+		stroke-dasharray: 124%;
+	}
+	to {
+		stroke-dasharray: 250%;
+	}
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2 / 1),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi),
+only screen and (min-resolution: 2dppx) {
+	.iti-flag {
+		background-image: url('./img/flags@2x.png');
+	}
+}
+
+html,
+body {
+	/* height: 100%; */
+	width: 100%;
+	overflow-x: hidden;
+}
+
+h1,
+h3,
+a {
+	font-family: officinaStdBold;
+}
+
+h2,
+label {
+	font-family: officinaStdBook;
+}
+
+/*----------- Class -----------*/
+
+.borderContentTabShow {
+	stroke: #49002C !important;
+	animation: rectBorder 2s linear;
+}
+
+.btnAnimation {
+	-moz-transition: .5s;
+	-webkit-transition: .5s;
+	-o-transition: .5s;
+	transition: .5s;
+}
+
+.btnAnimation:hover {
+	-moz-transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	-o-transform: scale(1.1);
+	transform: scale(1.1);
+}
+
+.btnCloseModal {
+	position: absolute;
+	right: 1.5%;
+	top: 1.5%;
+}
+
+.closedModal {
+	-moz-transform: scale(0);
+	-webkit-transform: scale(0);
+	-o-transform: scale(0);
+	transform: scale(0);
+	opacity: 0;
+	transition: 0s;
+}
+
+.colorViolet {
+	color: #49002C;
+}
+
+.colorBlue {
+	color: #002E53;
+}
+
+.colorGreen {
+	color: #4B9738;
+}
+
+.colorGray {
+	color: #191919;
+}
+
+.fontAvenir {
+	font-family: avenir;
+}
+
+.fontOfficinaStdBold {
+	font-family: officinaStdBold;
+}
+
+.fontOfficinaStdBook {
+	font-family: officinaStdBook;
+}
+
+.inputError {
+	border-bottom: 1px solid red !important;
+}
+
+.iti-flag {
+	background-image: url('./img/flags.png');
+}
+
+.intl-tel-input {
+	width: 100%;
+}
+
+.lineAnimation {
+	stroke-dasharray: 1000;
+	stroke-dashoffset: 1000;
+	animation: drawLine 3s linear forwards;
+}
+
+.openedModal {
+	-moz-transform: scale(1);
+	-webkit-transform: scale(1);
+	-o-transform: scale(1);
+	transform: scale(1);
+	opacity: 1;
+	transition: 0.5s;
+}
+
+.rotateBtn {
+	-moz-transform: rotate(180deg);
+	-webkit-transform: rotate(180deg);
+	-o-transform: rotate(180deg);
+	transform: rotate(180deg);
+	-moz-transition: 1s;
+	-webkit-transition: 1s;
+	-o-transition: 1s;
+	transition: 1s;
+}
+
+.rotateBtn2 {
+	-moz-transform: rotate(0deg);
+	-webkit-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
+	transform: rotate(0deg);
+	-moz-transition: 1s;
+	-webkit-transition: 1s;
+	-o-transition: 1s;
+	transition: 1s;
+}
+
+.windowModal {
+	position: fixed;
+	background: rgba(0, 0, 0, 0.95);
+	width: 100%;
+	height: 100%;
+	z-index: 1000;
+	overflow-y: scroll;			
+}
+
+.windowModal>.container-fluid {
+	max-width: 970px;
+}
+
+.windowModal h1 {
+	font-size: 2.25rem;
+	font-family: avenir !important;
+}
+
+.windowModal h2 {
+	font-size: 1rem;
+}
+
+.windowModal input {
+	background: none;
+	width: 100%;
+	border: 0;
+	border-bottom: 0.1rem solid #4B9738;
+	color: white;
+	font-size: 1.5rem;
+	font-family: officinaStdBook;
+	text-align: center;
+}
+
+.windowModal label,
+.windowModal a {
+	font-size: 1.25rem;
+	line-height: 1.5rem;
+}
+
+/*----------- Id's -----------*/
+
+#btnDown {
+	margin-top: -2.5%;
+}
+
+#cellphone {
+	z-index: 3;
+}
+
+#contentTab h3 {
+	font-family: officinaStdBold;
+	font-size: 1.6rem;
+	display: inline-block;
+	color: #fff;
+	background-color: #49002C;
+	padding: 1% 4% 1% 12%;
+}
+
+#contentTab p {
+	font-family: officinaStdBook;
+	color: #191919;
+	padding-left: 12%;
+	padding-right: 5%;
+	font-size: 1.5rem;
+	line-height: 1.5rem;
+}
+
+#divBtnHelp {
+	 margin-right: 0.7rem;    
+}
+
+#home {
+	background: url('./img/fondo-home.png');
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-size: cover;
+	-webkit-box-shadow: 0 0.5rem 3rem 0.5rem rgba(0, 0, 0, 0.95);
+	-moz-box-shadow: 0 0.5rem 3rem 0.5rem rgba(0, 0, 0, 0.95);
+	box-shadow: 0 0.5rem 3rem 0.5rem rgba(0, 0, 0, 0.95);
+	height: 90%;
+}
+
+#home h1,
+#home h2 {
+	font-size: 2.7rem;
+	line-height: 2rem;
+}
+
+#information {
+	background: url('./img/iconos-fondo-pantalla-2.png');
+	background-position: top right;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-size: content;
+}
+
+#information h1,
+#information h2 {
+	font-size: 3.3rem;
+	line-height: 2rem;
+}
+
+#lineMovil {
+	border-bottom: 0.3rem solid #fff;
+}
+
+#logoGreen {
+	z-index: 1;
+	margin-left: -10%;
+}
+
+#navTabs {
+	margin-bottom: -4%;
+}
+
+#navTabs a {
+	width: 5rem;
+	height: 5rem;
+	list-style: none;
+	padding: 0;
+	background-color: transparent;
+}
+
+#navTabs circle {
+	fill: transparent;
+	stroke: transparent;
+	stroke-width: 0.3rem;
+	stroke-dasharray: 92;
+	stroke-linecap: round;
+}
+
+#navTabs text {
+	font-family: officinaStdBook;
+	color: #191919;
+	font-size: 3rem;
+}
+
+#navTabs a.active circle {
+	stroke: #49002C !important;
+	animation: circleAnimation .5s linear;
+}
+
+#navTabs .svgCircle {
+	width: 5rem;
+	height: 5rem;
+}
+
+#registerCheckError,
+#recoveryErrorMsg {
+	font-size: 1rem !important;
+}
+
+#recoveryErrorTitle {
+	font-size: 1.5rem !important;
+	font-family: officinaStdBold !important;
+	color: red;
+}
+
+#recoveryDivQuestion {
+	border: 0.1rem solid #4B9738;
+	border-radius: 0.5rem;
+}
+
+#rectTab {
+	fill: transparent;
+	stroke: transparent;
+	stroke-width: 0.3rem;
+	stroke-dasharray: 250%;
+	stroke-dashoffset: -115%;
+	stroke-linecap: round;
+}
+
+#registerDivCheck label {
+	font-size: 1.375rem;
+}
+
+#registerCheckbox+label:before {
+	content: "\f096";
+	font-family: FontAwesome;
+	display: inline-block;
+	color: red;
+	letter-spacing: 0.5rem;
+}
+
+#registerCheckbox:checked+label:before {
+	content: "\f046";
+	color: #4B9738;
+	letter-spacing: 0.5rem;
+}
+
+#svgLine {
+	z-index: 2;
+}
+
+/*=============== Media Queries ===============*/
+
+/* Mobiles */
+@media (max-width: 575px) {
+	.svgCircle {
+		width: 3.8rem !important;
+		height: 3.8rem !important;
+	}
+	.windowModal h1 {
+		font-size: 1.8rem;	
+	}
+	.windowModal input {
+		font-size: 1.3rem;
+	}
+	#contentTab h3 {
+		font-size: 1.2rem;
+	}
+	#contentTab p {
+		font-size: 1.3rem;
+		padding-left: 2rem;
+		padding-right: 1rem;
+	}
+	#home {
+		height: auto;
+	}
+	#home h1,
+	#home h2 {
+		font-size: 1.9rem;
+		line-height: 1.5rem;
+	}
+	#btnLogin, 
+	#btnRegister {
+		width: 49%;
+	}
+	#information h1,
+	#information h2 {
+		font-size: 2.1rem;
+	}
+	#rectTab {
+		stroke-dasharray: 272%;
+		stroke-dashoffset: -99%;
+	}
+	#navTabs circle {
+		stroke-dasharray: 60;
+	}
+	#navTabs text {
+		font-size: 1.8rem;
+	}
+}
+
+/* Smartphones to Tablets SM */
+@media (min-width: 576px) and (max-width: 767px) {}
+
+/* Tablets MD */
+@media (min-width: 768px) and (max-width: 991px) {
+	.order-3 {
+		text-align: center !important;
+	}
+	.svgCircle {
+		width: 4rem !important;
+		height: 4rem !important;
+	}
+	.windowModal h1 {
+		font-size: 1.8rem;	
+	}
+	.windowModal input {
+		font-size: 1.3rem;
+	}
+	#btnDown {
+		width: 4%;
+	}
+	#btnHelp {
+		width: 60% !important;
+	}
+	#contentTab h3 {
+		font-size: 1.5rem;
+	}
+	#contentTab p {
+		font-size: 1.3rem;
+	}
+	#home img {
+		width: 75%;
+	}
+	#home a img {
+		width: 45%;
+	}
+	#home h1,
+	#home h2 {
+		font-size: 2.2rem;
+		line-height: 1.5rem;
+	}
+	#information h1,
+	#information h2 {
+		font-size: 2.4rem;
+	}
+	#logoGreen+div img {
+		width: 40%;
+	}
+	#navTabs text {
+		font-size: 2rem;
+	}
+	#navTabs circle {
+		stroke-dasharray: 60;
+	}
+	#rectTab {
+		stroke-dasharray: 272%;
+		stroke-dashoffset: -99%;
+	}
+	#socialNetwork nav img {
+		width: 100% !important;
+	}
+}
+
+/* Desktop LG */
+@media (min-width: 992px) and (max-width: 1199px) {
+	#contentTab h3 {
+		font-size: 1.5rem;
+	}
+	#contentTab p {
+		font-size: 1.3rem;
+	}
+	#home h1,
+	#home h2 {
+		font-size: 2.5rem;
+	}
+	#information h1,
+	#information h2 {
+		font-size: 2.6rem;
+	}
+	#navTabs text {
+		font-size: 2.2rem;
+	}
+}
+
+/* Large Display XL */
+@media (min-width: 1200px) {
+	#logoGreen+div {
+		text-align: left !important;
+		margin-left: 7% !important;;
+	}
+	
+}
